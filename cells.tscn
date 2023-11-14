@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://5wjq8rqimiq8"]
+
+[ext_resource type="PackedScene" uid="uid://ciqa65tl7e4ia" path="res://cell.tscn" id="1_m3ocv"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y1krb"]
+scenes/1/scene = ExtResource("1_m3ocv")
+
+[sub_resource type="TileSet" id="TileSet_4wase"]
+sources/0 = SubResource("TileSetScenesCollectionSource_y1krb")
+
+[node name="Cells" type="TileMap"]
+tile_set = SubResource("TileSet_4wase")
+format = 2

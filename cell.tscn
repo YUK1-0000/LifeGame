@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciqa65tl7e4ia"]
+
+[ext_resource type="Script" path="res://cell.gd" id="1_ohmmg"]
+
+[node name="Cell" type="StaticBody2D"]
+script = ExtResource("1_ohmmg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, -1, 1, -1, 1, 0)
+
+[node name="Sprite" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1, 0, 1, -1, 0, -1)
+
+[node name="AdjacentCellDetector" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AdjacentCellDetector"]
+polygon = PackedVector2Array(-1, 1, 2, 1, 2, -2, -1, -2)
+
+[connection signal="body_exited" from="AdjacentCellDetector" to="." method="_on_adjacent_cell_detector_body_exited"]
